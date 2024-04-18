@@ -10,8 +10,6 @@ isValid = true;
 var userId;
 userId = 'abc';
 userId = 123;
-// end union type
-// object
 var user;
 user = {
     name: "trp",
@@ -40,9 +38,44 @@ users = [
         id: '12345'
     }
 ];
-// end array of objects
-// functions
 function add(a, b) {
     return a + b;
 }
 add(1, 2);
+function calculate(a, b, calcFunc) {
+    calcFunc(a, b);
+}
+calculate(1, 2, add);
+var creds;
+creds = {
+    password: 'test',
+    email: 'test@example.com'
+};
+var AuthCredentials = /** @class */ (function () {
+    function AuthCredentials() {
+    }
+    return AuthCredentials;
+}());
+function login(credentials) {
+}
+login(creds);
+login(new AuthCredentials());
+var appAdmin;
+appAdmin = {
+    permissions: ['login'],
+    userName: 'test'
+};
+var role;
+role = 'admin';
+role = 'user';
+// end literal types
+// generics
+var roles;
+roles = ['admin', 'user'];
+var textStorage = {
+    storage: [],
+    add: function (data) {
+        this.storage.push(data);
+    }
+};
+// end generics
